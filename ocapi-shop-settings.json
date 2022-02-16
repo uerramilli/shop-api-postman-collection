@@ -1,0 +1,545 @@
+{
+    "_v": "19.10",
+    "clients": [{
+        "client_id": "46f446f3-539c-45f6-aee4-32a8cecdd14c",
+        "allowed_origins": [],
+        "resources": [{
+                "resource_id": "/baskets",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*",
+                "methods": ["get", "patch", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/billing_address",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/coupons",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/coupons/*",
+                "methods": ["delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/customer",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/gift_certificate_items",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/items",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/items/*",
+                "methods": ["patch","delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/notes",
+                "methods": ["post", "get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/payment_instruments",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/payment_instruments/*",
+                "methods": ["patch", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/payment_methods",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments/*",
+                "methods": ["patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments/*/shipping_address",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments/*/shipping_method",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments/*/shipping_methods",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/auth",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/password_reset",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*",
+                "methods": ["get", "patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/addresses",
+                "methods": ["get", "post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/addresses/*",
+                "methods": ["get", "patch", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/baskets",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/orders",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/password",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/payment_instruments",
+                "methods": ["get", "post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/payment_instruments/*",
+                "methods": ["get", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/categories/*",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*",
+                "methods": ["get", "patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*/notes",
+                "methods": ["get", "post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*/payment_methods",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*/payment_instruments",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/**/*",
+                "methods": ["get", "patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*/**/*",
+                "methods": ["patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/order_search",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/products/*",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/products/*/availability",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)",
+                "cache_time": 0
+            },
+            {
+                "resource_id": "/products/*/prices",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)",
+                "cache_time": 0
+            },
+            {
+                "resource_id": "/product_search",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/product_search/*",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/promotions/*",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/site",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            }
+        ]
+    },
+    {
+        "client_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "allowed_origins": [],
+        "resources": [{
+                "resource_id": "/baskets",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*",
+                "methods": ["get", "patch", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/billing_address",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/coupons",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/coupons/*",
+                "methods": ["delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/customer",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/gift_certificate_items",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/items",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/items/*",
+                "methods": ["patch", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/notes",
+                "methods": ["post", "get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/payment_instruments",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/payment_instruments/*",
+                "methods": ["patch", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/payment_methods",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments/*",
+                "methods": ["patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments/*/shipping_address",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments/*/shipping_method",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/baskets/*/shipments/*/shipping_methods",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/auth",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/password_reset",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*",
+                "methods": ["get", "patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/addresses",
+                "methods": ["get", "post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/addresses/*",
+                "methods": ["get", "patch", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/baskets",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/orders",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/password",
+                "methods": ["put"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/payment_instruments",
+                "methods": ["get", "post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/customers/*/payment_instruments/*",
+                "methods": ["get", "delete"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/categories/*",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*",
+                "methods": ["get", "patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*/notes",
+                "methods": ["get", "post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*/payment_methods",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*/payment_instruments",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/**/*",
+                "methods": ["get", "patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/orders/*/**/*",
+                "methods": ["patch"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/order_search",
+                "methods": ["post"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/products/*",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/products/*/availability",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)",
+                "cache_time": 0
+            },
+            {
+                "resource_id": "/products/*/prices",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)",
+                "cache_time": 0
+            },
+            {
+                "resource_id": "/product_search",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/product_search/*",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/promotions/*",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            },
+            {
+                "resource_id": "/site",
+                "methods": ["get"],
+                "read_attributes": "(**)",
+                "write_attributes": "(**)"
+            }
+        ]
+    }]
+}
