@@ -1,4 +1,5 @@
 Useful OCAPI Shop API calls.
+Download both api and environment postman collections and import into Postman workspace.
 
 To make this solution work for your Commerce Cloud Sandbox, do the following:
 1. Update host_server prop per your env on OCAPI Jaguars Env Vars collection
