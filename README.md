@@ -14,5 +14,6 @@ Sequence of OCAPI calls to create an order for a registered user in your sandbox
 2. Run 2b.Create basket for registered customer
 3. Run 2c.Add item to basket for registered customer
 4. Run 2d.Create order for registered customer
+
 Note: If run into CustomerBasketsQuotaExceededException - The maximum number of baskets per customer was exceeded, then 
 run 3a.Delete a basket 
