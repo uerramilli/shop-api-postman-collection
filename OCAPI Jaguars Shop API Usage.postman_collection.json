@@ -149,8 +149,8 @@
 				"auth": {
 					"type": "basic",
 					"basic": {
+						"password": "7wQ{SDrV)Y~xnlPSunq2Tj4p#7/fXJA}wk|4r6YW:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 						"username": "uerramilli@salesforce.com",
-						"password": "7uB(QQUI7O?2u9d[*ul2[_m2?x-Qdl2z6T7DbjZ_:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 						"saveHelperData": true,
 						"showPassword": false
 					}
@@ -218,6 +218,15 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"request": {
@@ -254,352 +263,6 @@
 					]
 				},
 				"url": "https://account.demandware.com/dw/oauth2/access_token"
-			},
-			"response": []
-		},
-		{
-			"name": "2c. Retrieve customers/{}/baskets",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"basketId\", jsonData.basket_id);\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
-				},
-				"url": "{{OCAPI_HOST}}/customers/{{customerId}}/baskets"
-			},
-			"response": []
-		},
-		{
-			"name": "GET baskets/{}/notes",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
-				},
-				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/baskets/{{basketId}}/notes"
-			},
-			"response": []
-		},
-		{
-			"name": "GET baskets/{}",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
-				},
-				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/baskets/{{basketId}}"
-			},
-			"response": []
-		},
-		{
-			"name": "2f. Retrieve notes- orders/{}/notes",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"basketId\", jsonData.basket_id);\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
-				},
-				"url": "https://{{hostname}}/s/RefArch/dw/shop/v20_9/orders/00000001/notes"
-			},
-			"response": []
-		},
-		{
-			"name": "4a. DELETE orders/{}/notes/{}",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"basketId\", jsonData.basket_id);\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
-				},
-				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/orders/00000001/notes/640b66d0fd435fb3bab678e230"
-			},
-			"response": []
-		},
-		{
-			"name": "2e. Add a note to existing order",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"basketId\", jsonData.basket_id);\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"subject\" : \"this is an example subject\",\n \"text\" : \"This is a note because the customer was not very happy.\"\n}"
-				},
-				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/orders/00000001/notes"
-			},
-			"response": []
-		},
-		{
-			"name": "2c. Add a note to existing basket",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n \"subject\" : \"this is an example subject\",\n \"text\" : \"This is a note because the customer was not very happy.\"\n}"
-				},
-				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/baskets/{{basketId}}/notes"
-			},
-			"response": []
-		},
-		{
-			"name": "5a. Search orders",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					},
-					{
-						"key": "DNT",
-						"value": "1"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"query\": {\n    \"text_query\": {\n      \"fields\": [\n        \"customer_name\"\n      ],\n      \"search_phrase\": \"Usha Erramilli\"\n    }\n  }\n}\n"
-				},
-				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/order_search"
-			},
-			"response": []
-		},
-		{
-			"name": "6a. Sessions",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{oAuthToken}}"
-					},
-					{
-						"key": "DNT",
-						"value": "1"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"query\": {\n    \"text_query\": {\n      \"fields\": [\n        \"customer_name\"\n      ],\n      \"search_phrase\": \"Big Lebowski\"\n    }\n  }\n}\n"
-				},
-				"url": "https://{{hostname}}/s/SiteGenesis/dw/shop/v16_9/sessions"
 			},
 			"response": []
 		},
@@ -831,17 +494,71 @@
 			"response": []
 		},
 		{
-			"name": "3a. Delete a basket",
+			"name": "2c. Add a note to existing basket",
 			"request": {
-				"method": "DELETE",
+				"method": "POST",
 				"header": [
 					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
 						"key": "Authorization",
-						"value": "{{Authorization_key}}",
-						"type": "text"
+						"value": "Bearer {{oAuthToken}}"
 					}
 				],
-				"url": "{{OCAPI_HOST}}/baskets/{{basketId}}"
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"subject\" : \"this is an example subject\",\n \"text\" : \"This is a note because the customer was not very happy.\"\n}"
+				},
+				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/baskets/{{basketId}}/notes"
+			},
+			"response": []
+		},
+		{
+			"name": "2c. Retrieve customers/{}/baskets",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"basketId\", jsonData.basket_id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
+				},
+				"url": "{{OCAPI_HOST}}/customers/{{customerId}}/baskets"
 			},
 			"response": []
 		},
@@ -871,6 +588,318 @@
 					"raw": "{\n  \"basket_id\" : \"{{basketId}}\"\n}"
 				},
 				"url": "{{OCAPI_HOST}}/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "2e. Add a note to existing order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"basketId\", jsonData.basket_id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"subject\" : \"this is an example subject\",\n \"text\" : \"This is a note because the customer was not very happy.\"\n}"
+				},
+				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/orders/00000001/notes"
+			},
+			"response": []
+		},
+		{
+			"name": "2f. Retrieve notes- orders/{}/notes",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"basketId\", jsonData.basket_id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
+				},
+				"url": "https://{{hostname}}/s/RefArch/dw/shop/v20_9/orders/00000001/notes"
+			},
+			"response": []
+		},
+		{
+			"name": "3a. GET baskets/{}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
+				},
+				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/baskets/{{basketId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "3a. GET baskets/{}/notes",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_info\": {\n    \"email\": \"restassured.integrationapi@sample.com\"\n  },\n  \"billing_address\": {\n    \"first_name\": \"Restassured\",\n    \"last_name\": \"IntegrationAPI\",\n    \"city\": \"Boston\",\n    \"country_code\": \"US\"\n  },\n  \"shipments\": [\n    {\n      \"shipping_method\": {\n        \"id\": \"001\"\n      },\n      \"shipping_address\": {\n        \"first_name\": \"Restassured\",\n        \"last_name\": \"IntegrationAPI\",\n        \"city\": \"Boston\",\n        \"country_code\": \"US\"\n      }\n    }\n  ],\n  \"payment_instruments\": [\n    {\n      \"payment_method_id\": \"CREDIT_CARD\",\n      \"payment_card\": {\n        \"card_type\": \"Visa\"\n      }\n    }\n  ],\n  \"coupon_items\":[\n   { \"code\" : \"the99coupon\"\n   }\n ],\n  \"product_items\": [\n    {\n      \"product_id\": \"ubi-soft-quick-yoga-training-nintendods\",\n      \"quantity\": 1.00\n    }\n  ]\n}"
+				},
+				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/baskets/{{basketId}}/notes"
+			},
+			"response": []
+		},
+		{
+			"name": "3a. Delete a basket",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization_key}}",
+						"type": "text"
+					}
+				],
+				"url": "{{OCAPI_HOST}}/baskets/{{basketId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "4a. Delete orders/{}/notes/{}",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\"customer_info\": {\n\t\"email\": \"restassured.integrationapi@sample.com\"\n},\n\"billing_address\": {\n\t\"first_name\": \"Restassured\",\n\t\"last_name\": \"IntegrationAPI\",\n\t\"city\": \"Boston\",\n\t\"country_code\": \"US\"\n},\n\"shipments\": [{\n\t\"shipping_method\": {\n\t\t\"id\": \"001\"\n\t},\n\t\"shipping_address\": {\n\t\t\"first_name\": \"Restassured\",\n\t\t\"last_name\": \"IntegrationAPI\",\n\t\t\"city\": \"Boston\",\n\t\t\"country_code\": \"US\"\n\t}\n}],\n\"payment_instruments\": [{\n\t\"payment_method_id\": \"CREDIT_CARD\",\n\t\"payment_card\": {\n\t\t\"card_type\": \"Visa\"\n\t}\n}],\n\"coupon_items\": [{\n\t\"code\": \"the99coupon\"\n}],\n\"product_items \": [{\n\t\"product_id \": \"ubi - soft - quick - yoga - training - nintendods \",\n\t\"quantity\": 1.00\n}]\n}"
+				},
+				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/orders/00000001/notes/640b66d0fd435fb3bab678e230"
+			},
+			"response": []
+		},
+		{
+			"name": "5a. GET orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}",
+						"disabled": true
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{Authorization_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/orders/00000502"
+			},
+			"response": []
+		},
+		{
+			"name": "5a. Search orders",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}"
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"text_query\": {\n      \"fields\": [\n        \"customer_name\"\n      ],\n      \"search_phrase\": \"Usha Erramilli\"\n    }\n  }\n}\n"
+				},
+				"url": "https://{{hostname}}/s/RefArch/dw/shop/v21_9/order_search"
+			},
+			"response": []
+		},
+		{
+			"name": "6a. Sessions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oAuthToken}}"
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"text_query\": {\n      \"fields\": [\n        \"customer_name\"\n      ],\n      \"search_phrase\": \"Big Lebowski\"\n    }\n  }\n}\n"
+				},
+				"url": "https://{{hostname}}/s/SiteGenesis/dw/shop/v16_9/sessions"
 			},
 			"response": []
 		}
